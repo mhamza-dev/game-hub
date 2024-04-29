@@ -35,7 +35,7 @@ const useGames = () => {
       });
 
     return () => controller.abort();
-  });
+  }, []);
   return { games, error };
 };
 
