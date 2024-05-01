@@ -1,6 +1,6 @@
 import { Button, HStack, Image, List, ListItem, Spinner } from "@chakra-ui/react";
 import useGenres, { Genre } from "../hooks/useGenres";
-import resiseImgeUrl from "../services/reziseImage";
+import resizeImgeUrl from "../services/resizeImage";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
@@ -19,7 +19,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
             <Image
               boxSize={"32px"}
               borderRadius={8}
-              src={resiseImgeUrl(genre.image_background)}
+              src={resizeImgeUrl(genre.image_background)}
             />
             <Button
               onClick={() => onSelectedGenre(genre)}

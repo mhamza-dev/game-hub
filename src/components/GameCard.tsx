@@ -4,7 +4,7 @@ import { Image } from "@chakra-ui/image";
 import { Heading, HStack } from "@chakra-ui/layout";
 import PlatformIcons from "./PlatformIcons";
 import CriticScore from "./CriticScore";
-import resiseImgeUrl from "../services/reziseImage";
+import resizeImgeUrl from "../services/resizeImage";
 
 interface Props {
     game: Game
@@ -13,7 +13,7 @@ interface Props {
 const GameCard = ({game}: Props) => {
   return (
     <Card>
-      <Image src={resiseImgeUrl(game.background_image)} />
+      <Image src={resizeImgeUrl(game.background_image)} />
       <CardBody>
         <Heading fontSize={{ sm: "sm", md: "md", lg: "lg", "2xl": "2xl" }}>
           {game.name}
