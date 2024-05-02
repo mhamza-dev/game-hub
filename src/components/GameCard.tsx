@@ -5,6 +5,7 @@ import { Heading, HStack } from "@chakra-ui/layout";
 import PlatformIcons from "./PlatformIcons";
 import CriticScore from "./CriticScore";
 import resizeImgeUrl from "../services/resizeImage";
+import GameRating from "./GameRating";
 
 interface Props {
     game: Game
@@ -21,7 +22,7 @@ const GameCard = ({game}: Props) => {
           />
           <CriticScore score={game.metacritic} />
         </HStack>
-        <Heading fontSize={"2xl"}>{game.name}</Heading>
+        <Heading fontSize={"2xl"}>{game.name} <GameRating rating={game.rating_top} /></Heading>
       </CardBody>
     </Card>
   );
