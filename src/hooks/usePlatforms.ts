@@ -1,11 +1,19 @@
-import platforms from "../data/platforms";
+import { useQuery } from "@tanstack/react-query";
+import apiClient from "../services/api-client";
+import { FetchResponse } from "./useData";
 export interface Platform {
   id: number;
   name: string;
   slug: string;
 }
 
-const usePlatforms = () => ({ data: platforms, isLoading: false, error: null });
+const usePlatforms = () =>
+  useQuery<FetchResponse<Platform>, Error>({
+    queryKey: ["platform"],
+    queryFn: () =>
+      apiClient
+        .get("/platforms/lists/parents")
+        .then((response) => response.data),
+  });
 
 export default usePlatforms;
- 
