@@ -4,11 +4,11 @@ import resizeImgeUrl from "../services/resizeImage";
 
 interface Props {
   onSelectedGenre: (genre: Genre) => void;
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
-  const {data, error, isLoading,} = useGenres();
+const GenreList = ({ onSelectedGenre, selectedGenreId }: Props) => {
+  const { data, error, isLoading } = useGenres();
   if (error) return null;
   if (isLoading) return <Spinner />;
   return (
@@ -32,7 +32,7 @@ const GenreList = ({ onSelectedGenre, selectedGenre }: Props) => {
                 variant={"link"}
                 whiteSpace={"normal"}
                 textAlign={"left"}
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
               >
                 {genre.name}
               </Button>

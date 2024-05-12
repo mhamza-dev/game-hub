@@ -46,7 +46,7 @@ const GamesGrid = ({ gameQuery }: Props) => {
             skeletons.map((skeleton) => (
               <GameCardContainer key={skeleton}>
                 <GameCardSkeleton />
-              </GameCardContainer>
+              </GameCardContainer> 
             ))}
           {data?.pages.map((page, index) => (
             <Fragment key={index}>
