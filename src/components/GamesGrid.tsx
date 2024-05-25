@@ -3,25 +3,18 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { GameQuery } from "../App";
 import { Fragment } from "react/jsx-runtime";
-import { Button } from "@chakra-ui/button";
 import { Box, Spinner } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-interface Props {
-  gameQuery: GameQuery;
-}
-
-const GamesGrid = ({ gameQuery }: Props) => {
+const GamesGrid = () => {
   const {
     data,
     error,
     isLoading,
-    isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
   const fetchedGamesCount =
